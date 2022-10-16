@@ -1,5 +1,4 @@
-    
-    /*           $$$$-$$$$      Dineros sin Fronteras          $$$$-$$$$        */  
+    /*           $$$$-$$$$             Dineros sin Fronteras          $$$$-$$$$        */  
 
 /*
         Pre Entrega Nº 2
@@ -14,51 +13,51 @@ const desc = 0.05
 const listCountrys = [
     
     {
-        pais: "Bolivia" && "bolivia",
+        pais: "Bolivia" || "bolivia",
         conversion: 0.04,
         moneda: "Pesos bolivianos"
         
     },
 
     {
-        pais: "Estados Unidos" && "estados unidos",
+        pais: "Estados Unidos" || "estados unidos",
         conversion: 0.007,
-        moneda: "Dolares"
+        moneda: "Dolares",
     },
 
     {
-        pais: "Canada" &&"canada",
+        pais: "Canada" || "canada",
         conversion: 0.009,
-        moneda: "Dolares canadienses"
+        moneda: "Dolares canadienses",
 
     },
 
     {
-        pais: "Chile" && "chile",
+        pais: "Chile" || "chile",
         conversion: 6.72,
         moneda : "Pesos chilenos",
     },
 
     {
-        pais: "Brasil" && "brasil",
+        pais: "Brasil" || "brasil",
         conversion: 0.03,
         moneda: "Reales", 
     },
 
     {
-        pais: "Uruguay" && "uruguay",
+        pais: "Uruguay" || "uruguay",
         conversion: 0.28,
         moneda: "Pesos uruguayos",
     },
 
     {
-        pais: "Venezuela" && "venezuela",
+        pais: "Venezuela" || "venezuela",
         conversion: 228.90,
         moneda: "Bolivarianos",
     },
 
     {
-        pais: "Colombia" && "colombia",
+        pais: "Colombia" || "colombia",
         conversion: 30.85,
         moneda: "Pesos colombianos",
     }
@@ -77,14 +76,14 @@ class Usuario{
 
 // Funcion de bienvenida
 
-function inicio(){
+function begin(){
     alert("Bienvenidos a Dinero sin fronteras");
-    ingresoCliente();
+    admission();
     alert("Desea Mandar Dinero?");
-    ingresoDePais();
+    entryCountry();
 }
 
-function ingresoCliente(){
+function admission(){
     const list = [];
     list.push(new Usuario
     (prompt("Ingrese nombre: "),
@@ -106,7 +105,7 @@ function ingresoCliente(){
 }
 
     
-    function ingresoDePais(){
+    function entryCountry(){
     
         let ingresePais = prompt("Ingrese Pais:  \n\nChile \n\nBrasil \n\nUruguay \n\nVenezuela \n\nColombia \n\n Bolivia \n\nEstados Unidos \n\nCanada");
         const paises = listCountrys.find((country) => 
@@ -114,18 +113,19 @@ function ingresoCliente(){
             return country.pais === ingresePais;
         })
         if(paises === undefined) {
-            alert("Pais invalido, vuelva a ingresar");   
+            alert("Pais invalido, vuelva a ingresar"); 
+            entryCountry(); 
         }else {
             alert ("\nSe va a mandar a " + paises.pais + " $" + enterAmount() * paises.conversion + " " + paises.moneda);
         }
     }  
         
 function enterAmount(){
-    let amount = parseFloat(prompt("Ingrese un monto entre 100 y 100.000 pesos argentinos"));
+    let amount = parseFloat(prompt("Ingrese un monto entre $100 y $100.000 pesos argentinos"));
     while(amount !== 0){
         if(amount > 100 && amount <= 100000){
             let descTotal = amount * desc;  //Aqui sacamos el porcentaje de la comision que se queda la pagina
-           console.log("La ganancia es de: " + descTotal + " pesosARG"); //aqui se la mostramos solo al desarrollador
+           console.log("La ganancia es de: " + descTotal + " pesos argentinos"); //aqui se la mostramos solo al desarrollador
             let res = amount - descTotal;
            return res;
         }else{
@@ -135,7 +135,7 @@ function enterAmount(){
     }
 }
 
-inicio();
+begin();
 
 
 
