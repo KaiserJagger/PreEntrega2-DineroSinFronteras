@@ -1,11 +1,11 @@
-    /*           $$$$-$$$$             Dineros sin Fronteras          $$$$-$$$$        */  
+    
+     /*           $$$$-$$$$             Dineros sin Fronteras          $$$$-$$$$        */  
 
 /*
-        Pre Entrega Nº 2
-    Nombre: Nicolas Andreolli
+                                           Pre Entrega Nº 2
+     Nombre: Nicolas Andreolli
+     Comision: 43610 - Java Script
 */
-
-const desc = 0.05
 
 
 //Array compuesto con objetos
@@ -83,6 +83,7 @@ function begin(){
     entryCountry();
 }
 
+//Ingreso de usuario
 function admission(){
     const list = [];
     list.push(new Usuario
@@ -94,17 +95,19 @@ function admission(){
 
     list.forEach((usuario) => {
         console.log(
-    `Usuario
-            Nombre: ${usuario.nombre} 
-            Apellido: ${usuario.apellido}
-            Email: ${usuario.email}
-            Contraseña: *********
-             `
+    `Usuario: 
+
+    Nombre: ${usuario.nombre} 
+    Apellido: ${usuario.apellido}
+    Email: ${usuario.email}
+    Contraseña: *********
+    \n--------------------------------
+        `
         );    
     });
 }
 
-    
+//Ingreso de pais    
     function entryCountry(){
     
         let ingresePais = prompt("Ingrese Pais:  \n\nChile \n\nBrasil \n\nUruguay \n\nVenezuela \n\nColombia \n\n Bolivia \n\nEstados Unidos \n\nCanada");
@@ -119,7 +122,10 @@ function admission(){
             alert ("\nSe va a mandar a " + paises.pais + " $" + enterAmount() * paises.conversion + " " + paises.moneda);
         }
     }  
-        
+
+// Ingreso de monto a mandar y descuento p/servicio
+const desc = 0.10 //Descuento por servicios
+
 function enterAmount(){
     let amount = parseFloat(prompt("Ingrese un monto entre $100 y $100.000 pesos argentinos"));
     while(amount !== 0){
@@ -135,7 +141,7 @@ function enterAmount(){
     }
 }
 
+//Ejecutar codigo
 begin();
-
 
 
