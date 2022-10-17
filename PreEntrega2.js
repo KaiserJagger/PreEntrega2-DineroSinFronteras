@@ -13,51 +13,51 @@
 const listCountrys = [
     
     {
-        pais: "Bolivia" || "bolivia",
+        pais: "Bolivia",
         conversion: 0.04,
         moneda: "Pesos bolivianos"
         
     },
 
     {
-        pais: "Estados Unidos" || "estados unidos",
+        pais: "Estados Unidos",
         conversion: 0.007,
         moneda: "Dolares",
     },
 
     {
-        pais: "Canada" || "canada",
+        pais: "Canada",
         conversion: 0.009,
         moneda: "Dolares canadienses",
 
     },
 
     {
-        pais: "Chile" || "chile",
+        pais: "Chile",
         conversion: 6.72,
         moneda : "Pesos chilenos",
     },
 
     {
-        pais: "Brasil" || "brasil",
+        pais: "Brasil",
         conversion: 0.03,
         moneda: "Reales", 
     },
 
     {
-        pais: "Uruguay" || "uruguay",
+        pais: "Uruguay",
         conversion: 0.28,
         moneda: "Pesos uruguayos",
     },
 
     {
-        pais: "Venezuela" || "venezuela",
+        pais: "Venezuela",
         conversion: 228.90,
         moneda: "Bolivarianos",
     },
 
     {
-        pais: "Colombia" || "colombia",
+        pais: "Colombia",
         conversion: 30.85,
         moneda: "Pesos colombianos",
     }
